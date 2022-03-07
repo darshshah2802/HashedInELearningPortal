@@ -1,0 +1,11 @@
+.footer-container {
+  background: #F5F5F5 0% 0% no-repeat padding-box;
+  opacity: 1;
+  bottom: 0;
+  min-height: 45px;
+  width: 100%;
+  position: fixed;
+}
+
+
+
