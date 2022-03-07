@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="dashboard-image dashboard-margin">
+    <p>Discover Latest Courses on React</p>
+  </div>
+  <div class="row dashboard-margin">
+    <div class="col-lg-9">
+      <div class="row">
+        <div class="col-lg-9">
+          All Courses
+        </div>
+        <div class="col-lg-3">
+          <select class="form-control form-control-sm" (change)="setOrderByValue($event)" >
+            <option value="">
+              Course Price
+              <svg xmlns="http://www.w3.org/2000/svg" width="12.828" height="18" viewBox="0 0 12.828 18"><defs><style></style></defs><g transform="translate(-5.586 -3)"><path class="a" d="M7,15l5,5,5-5"/><path class="a" d="M17,9,12,4,7,9"/></g></svg>
+            </option>
+            <option value="asc">Low to High</option>
+            <option value="desc">High to Low</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-courses [orderBy]="orderBy"></app-courses>
+</div>

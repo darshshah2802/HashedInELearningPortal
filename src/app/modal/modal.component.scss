@@ -1,0 +1,34 @@
+.show{
+  display: block;
+  padding-top: 200px;
+  background: rgba(0, 0, 0, 0.8);
+}
+.modal-header{
+  height: 20px;
+  background-color: #F6F8FF;
+  button {
+    margin-left: auto;
+    box-shadow: none;
+  }
+}
+.modal-body{
+  height: 100px;
+  font-weight: bold;
+}
+.modal-body{
+  text-align: center;
+  margin-top: 20px;
+}
+.close{
+  background: none;
+  border: none;
+  outline: none;
+  color: black;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.modal-icon {
+  margin-right: 10px;
+  color: #FF6738;
+}

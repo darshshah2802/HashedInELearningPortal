@@ -1,0 +1,160 @@
+.course-description-margin{
+  margin: 19px 20px;
+}
+.course-description-detail{
+  background: #0F1317 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  height: 283px;
+}
+
+.all-courses {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.course-title-header {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #0F1317;
+}
+
+.right-icon {
+  font-size: 22px;
+}
+
+.course-description-body {
+  flex: 0 0 317px;
+  max-height: 317px;
+  overflow-y: auto;
+}
+
+.course-description {
+  line-height: 28px;
+}
+
+.course-title{
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 600;
+  color: white;
+}
+
+.course-sub-title {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 300;
+  color: white;
+}
+
+.course-author {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 300;
+  color: #FF9271;
+}
+
+.course-tags{
+  justify-content: space-between;
+  display: flex;
+  max-width: 0px;
+  // flex: 0 0 260px;
+}
+
+.course-tags button{
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 300;
+  color: #080808;
+  padding-right: 20px;
+  padding-left: 20px;
+  height: 30px;
+  border: none;
+  width: 100px
+}
+
+.course-video {
+  margin-top: 26px;
+  width: 500px;
+  height: 332px;
+  background: #000000 0% 0% no-repeat padding-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-svg {
+  cursor: pointer;
+  > svg{
+    height: 64px;
+    color: white;
+  }
+}
+
+.showVideo {
+  display: block;
+}
+
+.hideVideo {
+  display: none;
+}
+
+.course-price {
+  font-size: 27px;
+  line-height: 37px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  color: #080808;
+}
+
+.empty-div-height {
+  height: 80px;
+}
+
+.course-discount {
+  text-decoration: line-through;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #080808;
+}
+
+.course-discount-text-color {
+  color: #d13030;
+}
+
+.hours-left {
+  font-weight: 650;
+}
+
+.course-price-detail {
+  width: 500px;
+}
+
+.course-add-to-cart{
+  background: #FF6738 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  color: #FFFFFF;
+  border: none;
+  line-height: 10px;
+  padding: 7px 50px
+}
+
+.course-add-to-wishlist {
+  border-radius: 4px;
+  background-color: transparent;
+  border: #FF6738 1px solid;
+  color: #FF6738;
+  line-height: 10px;
+  padding: 7px 50px
+}
+
+.add-course{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2.9em;
+}

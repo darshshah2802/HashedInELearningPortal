@@ -1,0 +1,110 @@
+<div class="container">
+  <div class="dashboard-image dashboard-margin">
+    <p>Discover Latest Courses on React</p>
+  </div>
+  <div class="row course-description-margin">
+    <div class="col-lg-9">
+      <div class="row">
+        <div class="col-lg-9">
+          <span class="all-courses">All Courses</span>
+          <span class="ms-3 me-3 right-icon"><i class="fa fa-angle-right"></i></span>
+           <span class="course-title-header">{{course.name}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="course-description-detail">
+    <div class="container">
+      <div class="dashboard-margin">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="course-title mt-4"><p>{{course.name}}</p></div>
+            <div class="course-sub-title"><p>{{course.subTitle}}</p></div>
+            <div class="course-author mt-5">{{course.author}}</div>
+            <div class="course-tags mt-4">
+              <button *ngFor="let tag of course.tags; let i = index" [ngClass]="{'ms-2': i !== 0}">{{tag}}</button>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card bg-transparent">
+              <div class="course-video">
+                <div class="video-svg" (click)="startVideo()" [ngClass]="{hideVideo: this.startVideoFlag}">
+                  <svg  xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
+                  </svg>
+                </div>
+                <div (click)="stopVideo()" [ngClass]="{showVideo: this.startVideoFlag, hideVideo: this.stopVideoFlag}" >
+                  <iframe width="500" height="332" src="https://www.youtube.com/embed/kuJNVKHHpGk?autoplay=1&controls=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+              <div class="card course-price-detail mt-3">
+                <div class="card-body">
+                  <div class="course-price mt-1">Rs {{ course.price }}/-</div>
+                  <div class="course-discount mt-2" *ngIf="course.originalPrice && course.originalPrice > 0">Rs {{course.originalPrice}}/-</div>
+                  <div class="course-time-left mt-2" *ngIf="course.originalPrice && course.originalPrice > 0">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24.528" height="21.528" fill="#d13030" viewBox="0 0 24.528 24.528"><defs><style></style></defs><path d="M21.947,6.454a1.022,1.022,0,0,0-.475,1.365,10.116,10.116,0,0,1,1.012,4.445,10.22,10.22,0,1,1-10.22-10.22,10.1,10.1,0,0,1,6.345,2.2,1.022,1.022,0,1,0,1.272-1.6,12.266,12.266,0,1,0,4.648,9.615,12.139,12.139,0,0,0-1.216-5.335A1.021,1.021,0,0,0,21.947,6.454Zm0,0"/><path d="M177.022,64A1.022,1.022,0,0,0,176,65.022v7.154a1.022,1.022,0,0,0,1.022,1.022h5.11a1.022,1.022,0,0,0,0-2.044h-4.088V65.022A1.022,1.022,0,0,0,177.022,64Zm0,0" transform="translate(-164.758 -59.912)"/></svg></span>
+                    <span class="hours-left ms-2 course-discount-text-color">{{course.hoursLeft}} hours</span>
+                    <span class="ms-1 course-discount-text-color" >left for this price</span>
+                  </div>
+                  <div class="add-course">
+                    <button class="course-add-to-cart" (click)="addToCart()">Add to Cart</button>
+                    <button class="course-add-to-wishlist" (click)="addToWishList()">
+                      Add to Wishlist
+                      <span class="ps-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16.457" height="24" viewBox="0 0 16.457 24"><defs><style>.a{fill:#ff6738;}</style></defs><g transform="translate(-13 -2)"><path class="a" d="M29.114,26a.343.343,0,0,1-.2-.061l-7.69-5.35-7.69,5.349a.343.343,0,0,1-.539-.28V3.714A1.716,1.716,0,0,1,14.714,2H27.743a1.716,1.716,0,0,1,1.714,1.714V25.657A.343.343,0,0,1,29.114,26Zm-7.886-6.171a.343.343,0,0,1,.2.061L28.771,25V3.714a1.029,1.029,0,0,0-1.029-1.029H14.714a1.029,1.029,0,0,0-1.029,1.029V25l7.347-5.111A.343.343,0,0,1,21.229,19.829Z" transform="translate(0)"/><path class="a" d="M29.713,21.741a.343.343,0,0,1-.2-.066l-2.953-2.147-2.953,2.147a.343.343,0,0,1-.528-.383l1.127-3.473-2.953-2.147a.343.343,0,0,1,.2-.62H25.1l1.13-3.473a.343.343,0,0,1,.651,0l1.13,3.473h3.649a.343.343,0,0,1,.2.62l-2.953,2.147,1.127,3.473a.343.343,0,0,1-.326.449Zm-3.154-2.979a.343.343,0,0,1,.2.066l2.3,1.673-.878-2.706a.343.343,0,0,1,.124-.383l2.3-1.673H27.765a.343.343,0,0,1-.326-.237l-.881-2.707-.88,2.709a.343.343,0,0,1-.326.237H22.508l2.3,1.672a.343.343,0,0,1,.124.383L24.056,20.5l2.3-1.673A.343.343,0,0,1,26.558,18.762Z" transform="translate(-5.33 -6.14)"/></g></svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="dashboard-margin">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-body course-description-body">
+            <div class="course-description-title">Course Details</div>
+            <div class="course-description mt-2"><p>{{course.description}}</p></div>
+            <!-- <div class="course-description mt-2"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever</p></div>
+            <div class="course-description mt-2"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever</p></div>
+            <div class="course-description mt-2"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever</p></div> -->
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="course-price mt-1">Rs 563/-</div>
+            <div class="course-discount">Rs 923/-</div>
+            <div class="course-time-left">
+              <span></span>
+              <span>8 hours left for this price</span>
+            </div>
+            <div class="add-course">
+              <button>Add to Cart</button>
+              <button>Add to Wishlist</button>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>
+<div class="empty-div-height"></div>
+
+<app-modal
+(notifyParent)="setModalMessage('','', false)"
+[modalIntent]="this.modalIntent"
+[showModal]="showModal"
+[message]="this.modalMessage"
+></app-modal>
