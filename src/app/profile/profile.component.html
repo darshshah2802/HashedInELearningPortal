@@ -55,7 +55,7 @@
                 <div class="col-lg-8">
                   <div class="form-group">
                     <label for="name" class="form-label-text">About Yourself</label>
-                    <textarea class="form-control field-shadow textarea-height" name="descriptionAboutYourself" placeholder=""></textarea>
+                    <textarea class="form-control field-shadow textarea-height" name="descriptionAboutYourself" formControlName="descriptionAboutYourself" placeholder=""></textarea>
                   </div>
                 </div>
               </div>
@@ -66,11 +66,6 @@
                     <input type="checkbox" class="form-check-input checkbox-shadow" [id]="interest.value" [value]="interest.value" (change)="onCheckboxChange($event)">
                     <label class="form-check-label fs-14" [for]="interest.value">{{ interest.name }}</label>
                   </div>
-                  <!-- <div class="custom-control custom-checkbox" *ngFor="let data of areaOfInterestForm; let j = index" formArrayName="areaOfInterest">
-                    <div [formGroupName]="j">
-                      <input type="checkbox" formControlName="isSelected" (change)="onCheckboxChange($event)"> {{data.name}}<br>
-                    </div>
-                  </div> -->
                 </div>
               </div>
               <div class="row mt-2">

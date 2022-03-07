@@ -26,26 +26,19 @@ export class ProfileComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, profileService: ProfileService) {
     this.profileForm = this.formBuilder.group({});
-    // this.profileForm = this.formBuilder.group({
-    //   displayName: new FormControl('', Validators.required),
-    //   firstName: new FormControl('', Validators.required),
-    //   lastName: new FormControl('', Validators.required),
-    //   areaOfInterest: this.formBuilder.array(['sales'], [Validators.required]),
-    //   profileType: new FormControl('professional'),
-    //   experience: new FormControl('10'),
-    //   technology: new FormControl('react'),
-    //   role: new FormControl(''),
-    // });
+
     this.profileService = profileService;
   }
 
 
   ngOnInit(): void {
       const profileValues = this.profileService.getProfileDetails();
+      console.log(profileValues);
       this.profileForm = this.formBuilder.group({
         displayName: new FormControl(profileValues.displayName, Validators.required),
         firstName: new FormControl(profileValues.firstName, Validators.required),
         lastName: new FormControl(profileValues.lastName, Validators.required),
+        descriptionAboutYourself: new FormControl(profileValues.descriptionAboutYourself),
         areaOfInterest: this.formBuilder.array([''], Validators.required),
         profileType: new FormControl(profileValues.profileType),
         experience: new FormControl(profileValues.experience),
