@@ -1,13 +1,4 @@
 export interface COURSE_TYPE  {
-  // subTitle: string,
-  // subTitle: string,
-  // availability: string ,
-  // name:  string,
-  // price:number,
-  // author:string,
-  // tag: string[],
-  // id: string,
-  // discounted_price: number
   id: string,
   author: string,
   subTitle: string,
@@ -19,7 +10,6 @@ export interface COURSE_TYPE  {
   discountPrice: number,
   originalPrice: number,
   hoursLeft: number,
-  // discounted_price: number
 }
 
 export const PAGE_SIZE = 5;
