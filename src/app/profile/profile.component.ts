@@ -11,10 +11,10 @@ import { ProfileService } from '../profile.service';
 export class ProfileComponent implements OnInit {
 
   areaOfInterestArr: any = [
-    { id: 1, name: 'Designer', value : 'designer', isSelected: false },
-    { id: 2, name: 'Developer', value : 'developer', isSelected: true },
-    { id: 3, name: 'Project Manager', value : 'projectManager', isSelected: false },
-    { id: 4, name: 'Sales', value : 'sales', isSelected: false },
+    { id: 1, name: 'Designer', value : 'designer', },
+    { id: 2, name: 'Developer', value : 'developer'},
+    { id: 3, name: 'Project Manager', value : 'projectManager' },
+    { id: 4, name: 'Sales', value : 'sales' },
   ];
 
   profileService: ProfileService;
@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit {
         firstName: new FormControl(profileValues.firstName, Validators.required),
         lastName: new FormControl(profileValues.lastName, Validators.required),
         descriptionAboutYourself: new FormControl(profileValues.descriptionAboutYourself),
-        areaOfInterest: this.formBuilder.array([''], Validators.required),
+        areaOfInterest: this.formBuilder.array(profileValues.areaOfInterest, Validators.required),
         profileType: new FormControl(profileValues.profileType),
         experience: new FormControl(profileValues.experience),
         technology: new FormControl(profileValues.technology),
@@ -47,7 +47,6 @@ export class ProfileComponent implements OnInit {
           Validators.pattern('^[a-zA-Z \-\']+')
         ),
       });
-      this.setCheckBoxValue(profileValues.areaOfInterest);
   }
 
   onCheckboxChange(e: any) {
@@ -58,14 +57,6 @@ export class ProfileComponent implements OnInit {
        const index = areaOfInterest.controls.findIndex(x => x.value === e.target.value);
        areaOfInterest.removeAt(index);
     }
-  }
-  get form() { return this.profileForm.controls; }
-
-  setCheckBoxValue(values: any){
-    let areaOfInterest: FormArray = this.profileForm.get('areaOfInterest') as FormArray;
-    areaOfInterest = values as FormArray;
-    areaOfInterest.push(new FormControl('developer'));
-    this.profileForm.get('areaOfInterest')?.patchValue(areaOfInterest);
   }
 
   onSubmit() {

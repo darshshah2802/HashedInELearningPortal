@@ -63,7 +63,7 @@
                 <div class="form-group">
                   <label for="name" class="form-label-text">Your Area of Interest</label>
                   <div class="form-check" *ngFor="let interest of areaOfInterestArr">
-                    <input type="checkbox" class="form-check-input checkbox-shadow" [id]="interest.value" [value]="interest.value" (change)="onCheckboxChange($event)">
+                    <input type="checkbox" class="form-check-input checkbox-shadow" [id]="interest.value" [checked]="this.profileForm.get('areaOfInterest')?.value.indexOf(interest.value) !== -1" [value]="interest.value" (change)="onCheckboxChange($event)">
                     <label class="form-check-label fs-14" [for]="interest.value">{{ interest.name }}</label>
                   </div>
                 </div>
